@@ -602,6 +602,28 @@ body {
             padding: 48px;
           }
 
+          .profile {
+            border-radius: 50%;
+            border: $primary solid 5px;
+            background: url("../img/profile_compressed.jpg") no-repeat;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 20px;
+
+            @media (min-width: 1200px) {
+              margin: 0 auto 96px;
+            }
+            @media (min-width: 768px) {
+              margin: 0 auto 48px;
+            }
+          }
+
+          .textblock {
+            margin: 0 auto;
+            width: fit-content;
+          }
+
           h2, p {
             font-family: 'Montserrat', sans-serif;
           }

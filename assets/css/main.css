@@ -594,6 +594,29 @@ body .main div.content section .scrolling.padding0 .image-cart:hover .overlay, b
     padding: 48px;
   }
 }
+body .main div.content section .scrolling .profile {
+  border-radius: 50%;
+  border: #ff6d00 solid 5px;
+  background: url("../img/profile_compressed.jpg") no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 20px;
+}
+@media (min-width: 1200px) {
+  body .main div.content section .scrolling .profile {
+    margin: 0 auto 96px;
+  }
+}
+@media (min-width: 768px) {
+  body .main div.content section .scrolling .profile {
+    margin: 0 auto 48px;
+  }
+}
+body .main div.content section .scrolling .textblock {
+  margin: 0 auto;
+  width: fit-content;
+}
 body .main div.content section .scrolling h2, body .main div.content section .scrolling p {
   font-family: "Montserrat", sans-serif;
 }
