@@ -14,6 +14,7 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  background-color: #292929;
 }
 
 input,
@@ -454,6 +455,7 @@ body .main div.content section .scrolling {
   float: right;
   width: calc(50% - 40px);
   padding: 20px;
+  background-color: white;
 }
 @media screen and (max-width: 800px) {
   body .main div.content section .scrolling {
@@ -596,11 +598,11 @@ body .main div.content section .scrolling.padding0 .image-cart:hover .overlay, b
 }
 body .main div.content section .scrolling .profile {
   border-radius: 50%;
-  border: #ff6d00 solid 5px;
-  background: url("../img/profile_compressed.jpg") no-repeat;
+  border: #292929 solid 5px;
+  background: url("../img/profile_image.jpg") no-repeat;
   background-size: cover;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   margin: 0 auto 20px;
 }
 @media (min-width: 1200px) {
@@ -615,10 +617,12 @@ body .main div.content section .scrolling .profile {
 }
 body .main div.content section .scrolling .textblock {
   margin: 0 auto;
-  width: fit-content;
+  width: 100%;
+  position: relative;
 }
 body .main div.content section .scrolling h2, body .main div.content section .scrolling p {
   font-family: "Montserrat", sans-serif;
+  display: block;
 }
 body .main div.content section .scrolling h2.start {
   font-weight: 600;
@@ -634,16 +638,18 @@ body .main div.content section .scrolling h2.head {
   margin: 1.6em 0 1.6em;
   letter-spacing: -1px;
 }
+body .main div.content section .scrolling h2.head.text-start {
+  margin: 3em 0 1.6em;
+  font-size: 26px;
+}
 body .main div.content section .scrolling p.text {
   margin: 25px 0;
   font-size: 13px;
   font-weight: 300;
-  white-space: pre-line;
+  white-space: normal;
 }
-body .main div.content section .scrolling p.lorem {
-  white-space: pre-line;
-  font-size: 13px;
-  font-weight: 300;
+body .main div.content section .scrolling a {
+  cursor: pointer;
 }
 body .main div.content section .scrolling .contact-info span, body .main div.content section .scrolling .contact-info a {
   color: #ffffff;

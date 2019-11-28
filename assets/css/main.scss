@@ -24,6 +24,7 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  background-color: #292929;
 }
 
 input,
@@ -452,6 +453,7 @@ body {
           float: right;
           width: calc(50% - 40px);
           padding: 20px;
+          background-color: white;
 
           @media screen and (max-width: 800px) {
             margin-top: 66px !important;
@@ -604,11 +606,11 @@ body {
 
           .profile {
             border-radius: 50%;
-            border: $primary solid 5px;
-            background: url("../img/profile_compressed.jpg") no-repeat;
+            border: $primary-bg solid 5px;
+            background: url("../img/profile_image.jpg") no-repeat;
             background-size: cover;
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
             margin: 0 auto 20px;
 
             @media (min-width: 1200px) {
@@ -621,11 +623,13 @@ body {
 
           .textblock {
             margin: 0 auto;
-            width: fit-content;
+            width: 100%;
+            position: relative;
           }
 
           h2, p {
             font-family: 'Montserrat', sans-serif;
+            display: block;
           }
 
           h2 {
@@ -643,6 +647,11 @@ body {
               font-size: 22px;
               margin: 1.6em 0 1.6em;
               letter-spacing: -1px;
+
+              &.text-start {
+                margin: 3em 0 1.6em;
+                font-size: 26px;
+              }
             }
           }
 
@@ -651,14 +660,12 @@ body {
               margin: 25px 0;
               font-size: 13px;
               font-weight: 300;
-              white-space: pre-line;
+              white-space: normal;
             }
+          }
 
-            &.lorem {
-              white-space: pre-line;
-              font-size: 13px;
-              font-weight: 300;
-            }
+          a {
+            cursor: pointer;
           }
 
           .contact-info {

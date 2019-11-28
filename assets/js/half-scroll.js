@@ -28,6 +28,7 @@ getHeightValues = () => {
     //get bottom position 3rd
     posBottom_s1 = posTop_s2 - header_height;
     posBottom_s2 = posTop_s2 + height_s2 - height_footer;
+    posBottom_s2 = (window.innerWidth > 800) ? posTop_s2 + height_s2 - height_footer : posTop_s2 + height_s2;
 };
 
 resizeEnd = () => {
@@ -63,6 +64,11 @@ initHalfScroll = () => {
         if (scroll > posTop_s2 && scroll < posBottom_s2) {
             rmClasses();
             $('#projects .sticky').addClass('fixed');
+        }
+
+        if (window.innerWidth < 800 && scroll > posBottom_s2 && scroll < posBottom_s2 + header_height) {
+            rmClasses();
+            $('#contact .sticky').addClass('fixed');
         }
 
         if (doc_width > 800) {
