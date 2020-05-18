@@ -6,7 +6,7 @@ $primary: #ff6d00;
 $primary-light: #ff9e40;
 $primary-dark: #c43c00;
 $primary-bg: #292929;
-$white: #ffffff;
+$white: #f4f4f4;
 
 $size: 12px;
 $time: 1;
@@ -24,7 +24,7 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: #292929;
+  background-color: #ffffff;
 }
 
 input,
@@ -382,6 +382,10 @@ body {
         float: left;
         position: relative;
 
+        &#contact {
+          z-index: 1;
+        }
+
         .sticky {
           height: 100%;
           width: 50%;
@@ -453,7 +457,7 @@ body {
           float: right;
           width: calc(50% - 40px);
           padding: 20px;
-          background-color: white;
+          background-color: $white;
 
           @media screen and (max-width: 800px) {
             margin-top: 66px !important;
@@ -499,7 +503,7 @@ body {
             .image-cart {
               background: none;
               width: 100%;
-              height: 100vh;
+              height: 400vh;
               position: relative;
               transition: all .5s;
               overflow: hidden;
@@ -510,14 +514,14 @@ body {
                 width: 100%;
                 height: 100%;
                 display: flex;
-                justify-content: center;
+                justify-content: left;
                 align-items: center;
-                transition: all .5s;
+                height: 25%;
 
                 .overlay {
                   width: 100%;
                   height: 100%;
-                  background-color: rgba(0, 0, 0, .1);
+                  //background-color: rgba(0, 0, 0, .1);
                   position: absolute;
                   top: 0;
                   left: 0;
@@ -563,33 +567,164 @@ body {
                 }
 
                 &.passkeep {
-                  background: #ffffff url("/assets/img/passkeep.png") no-repeat center;
-                  background-size: cover;
+                  .image {
+                    background: #ffffff url("/assets/img/PassKeep/passkeep.png") no-repeat center;
+                    background-size: cover;
+                  }
+
+                  .container {
+                    background: #e2e2e2;
+                  }
                 }
 
                 &.voozzle {
-                  background: #ffffff url("/assets/img/voozzle.png") no-repeat center;
-                  background-size: cover;
-                }
-              }
+                  z-index: 1;
 
-              &:hover, &:active, &:focus {
-                .inner {
-                  transform: scale(1.3);
-
-                  h3 {
-                    text-decoration: underline;
-                    opacity: 1;
-                    color: #d4d4d4;
+                  .image {
+                    background: #ffffff url("/assets/img/Voozzle/voozzle.png") no-repeat center;
+                    background-size: cover;
                   }
 
-                  .more-info {
-                    opacity: 1;
+                  .container {
+                    background: #0077C9;
+                    color: white;
                   }
                 }
 
-                .overlay {
-                  background-color: rgba(0, 0, 0, .5);
+                &.scrolled {
+                  position: fixed;
+                  top: 0;
+                  left: 50%;
+                  width: 250%;
+                  height: 100%;
+
+                  @media screen and (max-width: 800px) {
+                    width: 500%;
+                  }
+
+                  .image {
+                    width: 20%;
+                    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+                    z-index: 1;
+                  }
+
+                  .container {
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: calc(20% - 80px);
+                    flex-direction: column;
+                    padding: 40px;
+                    position: relative;
+                    user-select: text;
+                    margin: 0;
+
+                    &:last-of-type {
+                      display: none;
+                    }
+
+                    h1 {
+                      font-size: 40px;
+                      font-weight: 300;
+                      font-family: "Montserrat", sans-serif;
+                    }
+
+                    .googlePlay {
+                      width: 40%;
+                      height: auto;
+                      margin: 20px auto;
+                      display: flex;
+                      user-select: none;
+
+                      img {
+                        display: block;
+                        width: 100%;
+                      }
+                    }
+
+                    .img {
+                      user-select: none;
+                      width: 60%;
+                      height: auto;
+                      margin: 20px 0;
+                      text-decoration: none;
+                      position: relative;
+                      color: black;
+
+                      &:hover {
+                        span {
+                          bottom: -30px;
+                          opacity: 1;
+                        }
+
+                        img {
+                          filter: grayscale(100%);
+                        }
+                      }
+
+                      span {
+                        position: absolute;
+                        bottom: -14px;
+                        opacity: 0;
+                        display: block;
+                        text-align: center;
+                        font-weight: 300;
+                        font-family: "Montserrat", sans-serif;
+                        transition: .3s ease-in-out;
+                        width: 100%;
+                      }
+
+                      img {
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                        object-fit: contain;
+                        transition: .3s ease-in-out;
+                        border-radius: 8px;
+                      }
+                    }
+                  }
+                }
+
+                .container {
+                  display: none;
+                }
+
+                .image {
+                  width: 100%;
+                  height: 100%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  -webkit-transition: -moz-transform .5s;
+                  -moz-transition: -webkit-transform .5s;
+                  transition: transform .5s;
+                  position: relative;
+
+                  &.fixed {
+                    position: fixed;
+                    left: 0;
+                    width: 50%;
+                  }
+
+                  &.active {
+                    //transform: scale(1.1);
+
+                    h3 {
+                      text-decoration: underline;
+                      opacity: 1;
+                      color: #d4d4d4;
+                    }
+
+                    .more-info {
+                      opacity: 1;
+                    }
+
+                    .overlay {
+                      background-color: rgba(0, 0, 0, .5);
+                    }
+                  }
                 }
               }
             }
@@ -606,8 +741,8 @@ body {
 
           .profile {
             border-radius: 50%;
-            border: $primary-bg solid 5px;
-            background: url("../img/profile_image.jpg") no-repeat;
+            border: $primary-bg solid 3px;
+            background: url("../img/profile_image_2020.jpg") no-repeat;
             background-size: cover;
             width: 200px;
             height: 200px;
@@ -630,6 +765,10 @@ body {
           h2, p {
             font-family: 'Montserrat', sans-serif;
             display: block;
+
+            a {
+              color: #ff6d00;
+            }
           }
 
           h2 {
