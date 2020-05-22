@@ -172,6 +172,25 @@ body .main {
   height: auto;
   width: 100%;
 }
+body .main .back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 7.5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.25s;
+}
+body .main .back-to-top span {
+  color: #f4f4f4;
+  font-size: 26px;
+}
 body .main .menu-icon {
   float: left;
   display: flex;
@@ -308,6 +327,46 @@ body .main header.head .desktop-nav a:after {
 }
 body .main header.head .desktop-nav a:hover:after, body .main header.head .desktop-nav a:focus:after, body .main header.head .desktop-nav a:active:after {
   width: 100%;
+}
+body .main header.head .scroll {
+  position: absolute;
+  left: calc(50% - 1em);
+  width: 2em;
+  height: 3.8em;
+  bottom: 3em;
+  border: 0.15em solid #f4f4f4;
+  cursor: pointer;
+  border-radius: 5em;
+  z-index: 1;
+}
+@media screen and (min-width: 800px) {
+  body .main header.head .scroll {
+    display: none;
+  }
+}
+body .main header.head .scroll:before {
+  content: "";
+  position: absolute;
+  left: calc(50% - 3px);
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background: #f4f4f4;
+  border-radius: 50%;
+  -webkit-animation: fadeTo 1.4s ease-in infinite;
+  animation: fadeTo 1.4s ease-in infinite;
+}
+@-webkit-keyframes fadeTo {
+  to {
+    transform: translateY(1em);
+    opacity: 0;
+  }
+}
+@keyframes fadeTo {
+  to {
+    transform: translateY(1em);
+    opacity: 0;
+  }
 }
 body .main header.head .header-content {
   position: absolute;
@@ -710,6 +769,14 @@ body .main div.content section .scrolling.padding0 .image-cart .inner .image.fix
   position: fixed;
   left: 0;
   width: 50%;
+}
+@media screen and (max-width: 800px) {
+  body .main div.content section .scrolling.padding0 .image-cart .inner .image.fixed {
+    width: 100%;
+    height: 20%;
+    top: 0;
+    display: none;
+  }
 }
 body .main div.content section .scrolling.padding0 .image-cart .inner .image.active h3 {
   text-decoration: underline;

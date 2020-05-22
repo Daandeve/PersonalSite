@@ -70,6 +70,13 @@ handleScroll = () => {
     rmClasses();
   }
 
+  console.log(scroll);
+  if (!scroll || scroll < 20) {
+    _('.back-to-top').css('opacity', 0);
+  } else {
+    _('.back-to-top').css('opacity', 1);
+  }
+
   if (scroll > posTop_s1) {
     rmClasses();
     _('#about .sticky').addClass('fixed');
@@ -93,8 +100,13 @@ handleScroll = () => {
       _('.image-cart .passkeep .image').addClass('active');
 
     if (scroll < (posTop_s2 + (height_s2 / 2) + header_height)) {
-      let percent = ((scroll - posTop_s2) / (height_s2 / 2)) * 200;
-      if (percent < 50) {
+      let percent;
+      if (doc_width > 800)
+        percent = ((scroll - posTop_s2) / (height_s2 / 2)) * 200;
+      else
+        percent = ((scroll - posTop_s2) / (height_s2 / 2)) * 400;
+
+      if ((percent < 50 && doc_width > 800) || (percent < 100 && doc_width < 800)) {
         _('.image-cart .passkeep .image').removeClass('fixed');
         _('.image-cart .passkeep .container:first-child, .image-cart .passkeep .container:last-of-type').hide();
       } else {
@@ -110,10 +122,14 @@ handleScroll = () => {
     }
 
     if (scroll > (posTop_s2 + (height_s2 / 2))) {
-      _('.image-cart .voozzle .image').addClass('active');
+      let percent;
+      if (doc_width > 800)
+        percent = ((scroll - posTop_s2 - (height_s2 / 2)) / (height_s2 / 2)) * 200;
+      else
+        percent = ((scroll - posTop_s2 - (height_s2 / 2)) / (height_s2 / 2)) * 400;
 
-      let percent = ((scroll - posTop_s2 - (height_s2 / 2)) / (height_s2 / 2)) * 200;
-      if (percent < 50) {
+      _('.image-cart .voozzle .image').addClass('active');
+      if ((percent < 50 && doc_width > 800) || (percent < 100 && doc_width < 800)) {
         _('.image-cart .voozzle .image').removeClass('fixed');
         _('.image-cart .voozzle .container:first-child, .image-cart .voozzle .container:last-of-type').hide();
       } else {

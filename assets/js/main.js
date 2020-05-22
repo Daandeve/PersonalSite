@@ -22,10 +22,10 @@ scrollToItem = (href) => {
   if (href === 'about') {
     smoothScroll(headerHeight, 1000);
   } else if (href === 'projects') {
-    const height = headerHeight + aboutHeight;
+    const height = headerHeight + aboutHeight + 1;
     smoothScroll(height, 1000);
   } else if (href === 'contact') {
-    const height = headerHeight + aboutHeight + projectsHeight;
+    const height = headerHeight + aboutHeight + projectsHeight + 1;
     smoothScroll(height, 1000);
   } else {
     smoothScroll(0, 1000);

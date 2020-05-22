@@ -136,6 +136,27 @@ body {
     height: auto;
     width: 100%;
 
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      opacity: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 5;
+      background-color: rgba(0, 0, 0, .5);
+      padding: 7.5px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: opacity .25s;
+
+      span {
+        color: $white;
+        font-size: 26px;
+      }
+    }
+
     .menu-icon {
       float: left;
       display: flex;
@@ -282,6 +303,52 @@ body {
             &:after {
               width: 100%;
             }
+          }
+        }
+      }
+
+      .scroll {
+        position: absolute;
+        left: calc(50% - 1em);
+        width: 2em;
+        height: 3.8em;
+        bottom: 3em;
+        border: .15em solid $white;
+        cursor: pointer;
+        border-radius: 5em;
+        z-index: 1;
+
+        @media screen and (min-width: 800px) {
+          display: none;
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: calc(50% - 3px);
+          top: 10px;
+          width: 6px;
+          height: 6px;
+          background: $white;
+          border-radius: 50%;
+          -webkit-animation: fadeTo 1.4s ease-in infinite;
+          animation: fadeTo 1.4s ease-in infinite;
+        }
+
+        @-webkit-keyframes fadeTo {
+          from {
+          }
+          to {
+            transform: translateY(1em);
+            opacity: 0;
+          }
+        }
+        @keyframes fadeTo {
+          from {
+          }
+          to {
+            transform: translateY(1em);
+            opacity: 0;
           }
         }
       }
@@ -661,7 +728,7 @@ body {
                         span {
                           bottom: 5px;
                         }
-                        
+
                         &:hover {
                           span {
                             bottom: -11px;
@@ -747,6 +814,13 @@ body {
                     position: fixed;
                     left: 0;
                     width: 50%;
+
+                    @media screen and (max-width: 800px) {
+                      width: 100%;
+                      height: 20%;
+                      top: 0;
+                      display: none;
+                    }
                   }
 
                   &.active {
