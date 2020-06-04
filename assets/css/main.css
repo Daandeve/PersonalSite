@@ -825,9 +825,37 @@ body .main div.content section .scrolling .textblock {
   width: 100%;
   position: relative;
 }
+body .main div.content section .scrolling .textblock .wrap {
+  display: flex;
+  flex-direction: column;
+}
+body .main div.content section .scrolling .textblock .wrap .icon-wrapper {
+  display: grid;
+  width: 100%;
+  height: 75px;
+}
+body .main div.content section .scrolling .textblock .wrap .icon-wrapper.c7 {
+  grid-template-columns: repeat(7, calc(100% / 7));
+}
+body .main div.content section .scrolling .textblock .wrap .icon-wrapper.c6 {
+  grid-template-columns: repeat(6, calc(100% / 6));
+}
+body .main div.content section .scrolling .textblock .wrap .icon-wrapper.c5 {
+  grid-template-columns: repeat(5, calc(100% / 5));
+}
+body .main div.content section .scrolling .textblock .wrap .icon-wrapper div {
+  display: grid;
+}
+body .main div.content section .scrolling .textblock .wrap .icon-wrapper div img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 body .main div.content section .scrolling h2, body .main div.content section .scrolling p {
   font-family: "Montserrat", sans-serif;
   display: block;
+  margin: 0;
 }
 body .main div.content section .scrolling h2 a, body .main div.content section .scrolling p a {
   color: #ff6d00;
@@ -835,7 +863,7 @@ body .main div.content section .scrolling h2 a, body .main div.content section .
 }
 body .main div.content section .scrolling p.text {
   margin: 25px 0;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 300;
   white-space: normal;
 }
@@ -850,7 +878,7 @@ body .main div.content section .scrolling .head {
   letter-spacing: -1px;
 }
 body .main div.content section .scrolling .head.text-start {
-  margin: 3em 0 1.6em;
+  margin: 60px 0 20px;
   font-size: 26px;
 }
 body .main div.content section .scrolling .info {

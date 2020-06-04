@@ -70,7 +70,6 @@ handleScroll = () => {
     rmClasses();
   }
 
-  console.log(scroll);
   if (!scroll || scroll < 20) {
     _('.back-to-top').css('opacity', 0);
   } else {
